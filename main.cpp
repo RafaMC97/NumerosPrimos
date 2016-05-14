@@ -23,22 +23,22 @@ int main() {
     cout << "Digite um numero: ";
     cin >> u;
 
-    char quaisPrimos[u];
+    int quaisPrimos[u];
 
     for (int x=0;x<u;x++){
         if(isPrimo(x)) {
-            quaisPrimos[primos++];
+            quaisPrimos[primos++]=x;
         }
     }
 
     cout << "Numeros primos entre 0 e " << u << " = " << primos << endl;
     if(primos < 1)
         return 0;
-    cout << "\nNumeros encontrados: ";
-    for(int i=0;i<primos;i++){
-        cout << quaisPrimos[i] << ", "
+    cout << "\nNumeros encontrados: " << quaisPrimos[0];
+    for(int i=1;i<primos;i++){
+        cout << ", " << quaisPrimos[i];
     }
-
+    cout << endl;
     return 0;
 }
 
