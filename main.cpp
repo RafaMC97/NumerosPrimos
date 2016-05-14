@@ -18,16 +18,26 @@ bool isPrimo(int n){
 
 int main() {
     int u,primos=0;
-    cout << "---------------------\nContador de Numeros Primos\n---------------------\n\n" << endl;
+
+    cout << "---------------------\nContador de Numeros Primos\n---------------------\n" << endl;
     cout << "Digite um numero: ";
     cin >> u;
 
+    char quaisPrimos[u];
+
     for (int x=0;x<u;x++){
-        if(isPrimo(x))
-            primos++;
+        if(isPrimo(x)) {
+            quaisPrimos[primos++];
+        }
     }
 
     cout << "Numeros primos entre 0 e " << u << " = " << primos << endl;
+    if(primos < 1)
+        return 0;
+    cout << "\nNumeros encontrados: ";
+    for(int i=0;i<primos;i++){
+        cout << quaisPrimos[i] << ", "
+    }
 
     return 0;
 }
