@@ -20,7 +20,7 @@ bool isPrimo(int n){
 int main() {
     int u,primos=0;
 
-    cout << "---------------------\nContador de Numeros Primos\n---------------------\n" << endl;
+    cout << "----------------------------\n Contador de Numeros Primos\n----------------------------\n" << endl;
     bool foi;
     do {
         foi = true;
