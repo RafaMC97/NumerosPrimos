@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <exception>
 
 using namespace std;
 
@@ -20,9 +21,12 @@ int main() {
     int u,primos=0;
 
     cout << "---------------------\nContador de Numeros Primos\n---------------------\n" << endl;
-    cout << "Digite um numero: ";
-    cin >> u;
-
+    bool foi;
+    do {
+        foi=true;
+        cout << "Digite um numero: ";
+        cin >> u;
+    }while(!foi);
     int quaisPrimos[u];
 
     for (int x=0;x<u;x++){
@@ -30,7 +34,6 @@ int main() {
             quaisPrimos[primos++]=x;
         }
     }
-
     cout << "Numeros primos entre 0 e " << u << " = " << primos << endl;
     if(primos < 1)
         return 0;
