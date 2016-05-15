@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <exception>
+#include <limits>
 
 using namespace std;
 
@@ -21,12 +21,15 @@ int main() {
     int u,primos=0;
 
     cout << "---------------------\nContador de Numeros Primos\n---------------------\n" << endl;
-    bool foi;
-    do {
-        foi=true;
+
+    cout << "Digite um numero: ";
+    while(!(cin >> u)){
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cerr << "Erro, valor inserido invalido" << endl;
         cout << "Digite um numero: ";
-        cin >> u;
-    }while(!foi);
+    }
+
     int quaisPrimos[u];
 
     for (int x=0;x<u;x++){
