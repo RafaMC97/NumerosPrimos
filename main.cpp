@@ -21,14 +21,20 @@ int main() {
     int u,primos=0;
 
     cout << "---------------------\nContador de Numeros Primos\n---------------------\n" << endl;
-
-    cout << "Digite um numero: ";
-    while(!(cin >> u)){
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cerr << "Erro, valor inserido invalido" << endl;
+    bool foi;
+    do {
+        foi = true;
         cout << "Digite um numero: ";
-    }
+        if (!(cin >> u)) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cerr << "Erro, valor inserido invalido" << endl;
+            foi=false;
+        }else if(u<0){
+            cerr << "Erro, valor negativo" << endl;
+            foi = false;
+        }
+    }while(!foi);
 
     int quaisPrimos[u];
 
